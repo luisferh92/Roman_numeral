@@ -16,7 +16,7 @@ public static void CalNum(){
            System.out.print("Introduce un número entre 1 y 3000: ");
            Number = sc.nextInt();
            if(Number >3000 || Number<0 || Number==0){
-     		  System.out.println("NUMERO NO VALIDO!!");
+     		  System.out.println("INVALID NUMBER!!");
      	  }else{
        System.out.println(Number + " en numeros romanos -> " + convertirANumerosRomanos(Number));
        flag=false;
@@ -24,67 +24,64 @@ public static void CalNum(){
     } while (flag==true);
 	
 }
-  public static String convertirANumerosRomanos(int numero) {
-      int i, miles, centenas, decenas, unidades;
-      String romano = "";
-     //obtenemos cada cifra del número
-      miles = numero / 1000;
-      centenas = numero / 100 % 10;
-      decenas = numero / 10 % 10;
-      unidades = numero % 10;
+  public static String convertirANumerosRomanos(int number) {
+      int i, miles, cent, dec, unit;
+      String roman = "";
+     
+      miles = number / 1000;
+      cent = number / 100 % 10;
+      dec = number / 10 % 10;
+      unit = number % 10;
 
-     //millar
+
       for (i = 1; i <= miles; i++) {
-             romano = romano + "M";
+    	  roman = roman + "M";
       }
 
-     //centenas
-      if (centenas == 9) {
-          romano = romano + "CM";
-      } else if (centenas >= 5) {
-                     romano = romano + "D";
-                     for (i = 6; i <= centenas; i++) {
-                            romano = romano + "C";
+      if (cent == 9) {
+    	  roman = roman + "CM";
+      } else if (cent >= 5) {
+    	  roman = roman + "D";
+                     for (i = 6; i <= cent; i++) {
+                    	 roman = roman + "C";
                      }
-      } else if (centenas == 4) {
-                      romano = romano + "CD";
+      } else if (cent == 4) {
+    	  roman = roman + "CD";
       } else {
-                  for (i = 1; i <= centenas; i++) {
-                         romano = romano + "C";
+                  for (i = 1; i <= cent; i++) {
+                         roman = roman + "C";
                   }
       }
 
-     //decenas
-      if (decenas == 9) {
-           romano = romano + "XC";
-      } else if (decenas >= 5) {
-                      romano = romano + "L";
-                      for (i = 6; i <= decenas; i++) {
-                            romano = romano + "X";
+      if (dec == 9) {
+           roman = roman + "XC";
+      } else if (dec >= 5) {
+                      roman = roman + "L";
+                      for (i = 6; i <= dec; i++) {
+                            roman = roman + "X";
                       }
-      } else if (decenas == 4) {
-                      romano = romano + "XL";
+      } else if (dec == 4) {
+                      roman = roman + "XL";
       } else {
-                    for (i = 1; i <= decenas; i++) {
-                           romano = romano + "X";
+                    for (i = 1; i <= dec; i++) {
+                           roman = roman + "X";
                     }
       }
 
-     //unidades
-      if (unidades == 9) {
-           romano = romano + "IX";
-      } else if (unidades >= 5) {
-                      romano = romano + "V";
-                      for (i = 6; i <= unidades; i++) {
-                             romano = romano + "I";
+      if (unit == 9) {
+           roman = roman + "IX";
+      } else if (unit >= 5) {
+                      roman = roman + "V";
+                      for (i = 6; i <= unit; i++) {
+                             roman = roman + "I";
                       }
-      } else if (unidades == 4) {
-                      romano = romano + "IV";
+      } else if (unit == 4) {
+                      roman = roman + "IV";
       } else {
-                  for (i = 1; i <= unidades; i++) {
-                         romano = romano + "I";
+                  for (i = 1; i <= unit; i++) {
+                         roman = roman + "I";
                   }
       }
-      return romano;
+      return roman;
   }
 }
