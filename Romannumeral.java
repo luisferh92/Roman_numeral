@@ -18,13 +18,13 @@ public static void CalNum(){
            if(Number >3000 || Number<0 || Number==0){
      		  System.out.println("INVALID NUMBER!!");
      	  }else{
-       System.out.println(Number + " en numeros romanos -> " + convertirANumerosRomanos(Number));
+       System.out.println(Number + " en numeros romanos -> " + convertToRomanNumber(Number));
        flag=false;
      	  }
     } while (flag==true);
 	
 }
-  public static String convertirANumerosRomanos(int number) {
+  public static String convertToRomanNumber(int number) {
       int i, miles, cent, dec, unit;
       String roman = "";
      
