@@ -13,12 +13,12 @@ public static void CalNum(){
     int Number;
     boolean flag=true;
     do {
-           System.out.print("Introduce un número entre 1 y 3000: ");
+           System.out.print("Write a number between 1 and 3000: ");
            Number = sc.nextInt();
            if(Number >3000 || Number<0 || Number==0){
      		  System.out.println("INVALID NUMBER!!");
      	  }else{
-       System.out.println(Number + " en numeros romanos -> " + convertToRomanNumber(Number));
+       System.out.println(Number + " = " + convertToRomanNumber(Number));
        flag=false;
      	  }
     } while (flag==true);
@@ -84,4 +84,3 @@ public static void CalNum(){
       }
       return roman;
   }
-}
